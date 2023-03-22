@@ -13,48 +13,18 @@ class Main:
         self.cursor = self.db.cursor()
 
         self.window()
-        self.create_style()
         self.draw()
         
+
     def window(self):
         self.win = tk.Tk()
         self.win.geometry('800x500')
         self.win.title('Gestion de stock')
 
-    def create_style(self):
-        self.style = ttk.Style()
-        self.style.theme_create('my_theme', settings={
-        # ".": {
-        #     "configure": {
-        #         "background": '#1C263D', # All except tabs
-        #         "font": WHITE
-        #     }
-        # },
-                "TNotebook": { # This part modifies all the content
-                    "configure": {
-                        "background": Colors.GREY_1, # Color behind the tab, we see it where there is no tab
-                        "tabmargins": [1, 2, 0, 0], 
-                        "font": Fonts.LITTLE,
-                        "foreground" : Colors.WHITE
-                    }
-                },
-                "TNotebook.Tab": { # This part modifies the "header" tab
-                    "configure": {
-                        "background": Colors.GREY_1,
-                        "padding": [20, 2],
-                        "font": Fonts.MEDIUM,
-                        "foreground" : Colors.WHITE
-                    },
-                    "map": {
-                        "background": [("selected", Colors.BLUE)], # Tab color when selected
-                        "expand": [("selected", [1, 1, 1, 0])] # text margins
-                    }
-                }
-            })
+        # Theme import : 
+        self.win.tk.call('source', 'Tkinter_theme/forest-dark.tcl')
+        ttk.Style().theme_use('forest-dark')
 
-        # self.style.theme_use("")
-        self.style.configure('TNotebook', background = Colors.GREY_1, tabmargins = [1, 2, 0, 0])
-        self.style.configure('TNotebook.Tab', background =  Colors.GREY_1)
 
     def draw(self):
 
@@ -72,7 +42,6 @@ class Main:
         # Catalogue : 
         
 
-        
     def create_database(self, name):
         self.cursor.execute("SHOW DATABASES;")
         self.list_database = []
