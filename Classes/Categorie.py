@@ -37,4 +37,10 @@ class Categorie:
     def join_inner(self):
         self.cursor.execute("SELECT * FROM produit INNER JOIN categorie ON produit.id_categorie = categorie.id;")
 
-p1 = Categorie()
+    def list_categorie(self):
+        self.cursor.execute("SELECT nom FROM categorie;")
+        results = self.cursor.fetchall()
+        self.all_categorie = []
+
+        for i in range(0, len(results)):
+            self.all_categorie.append(results[i][0])
