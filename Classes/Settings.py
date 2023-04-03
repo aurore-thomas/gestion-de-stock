@@ -1,28 +1,17 @@
 import tkinter as tk
+import customtkinter as ctk
 from tkinter import ttk
+from tkinter import *
+import csv
 
 # ------------------------------------
 #               COLORS 
 # ------------------------------------
-class Colors:
-    TRUE_BLACK = (0, 0, 0)
-    FALSE_BLACK = (25, 25, 25)
-    WHITE = (255, 255, 255)
-
-    GREY_1 = '#0D1117'
-    GREY_2 = '#161B22' # Le plus clair
-    BLUE = '#A5D6FF'
+BLUE = '#A5D6FF'
 
 # ------------------------------------
 #               FONTS
 # ------------------------------------
-class Fonts:
-    LITTLE = ('Arial', 11)
-    MEDIUM = ('Arial', 40)
-    BIG = ('Lato', 16)
-
-# ------------------------------------
-#               OTHER
-# ------------------------------------
-# SIZE = (600, 500)
-
+LITTLE = ('Arial', 18)
+MEDIUM = ('Arial', 22)
+BIG = ('Arial', 24)

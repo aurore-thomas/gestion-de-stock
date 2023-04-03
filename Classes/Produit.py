@@ -6,7 +6,7 @@ class Produit:
                 host = "localhost",
                 user  = 'root',
                 password = '05012001',
-                database = 'test'
+                database = 'boutique'
         )
         
         self.cursor = self.db.cursor()
